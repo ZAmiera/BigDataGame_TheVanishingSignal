@@ -1,11 +1,19 @@
 import streamlit as st
+import time 
+from PIL import Image
 
 def stage3_page():
-    st.title("Chapter 3: Langkah yang Terlupakan")
+    #st.title("Chapter 3: Langkah yang Terlupakan")
+    image = Image.open("assets/3.png")
+    st.image(image, caption='', use_column_width=True)
 
     st.markdown("""
     Gedung itu selalu sunyi di malam hari. Namun, log akses menunjukkan sesuatu yang lain.
     """)
+    image2 = Image.open("assets/apart.png")
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        st.image(image2, caption='', width=350)
     # p2
     st.markdown("""
     Pintu laboratorium komunikasi terbuka pada pukul 02:17. Tidak ada nama, hanya angka. Beberapa menit kemudian, pintu pusat data ikut terbuka. Lalu, seseorang meninggalkan gedung tanpa jejak.
@@ -31,6 +39,7 @@ def stage3_page():
             st.success("Chapter 3 selesai!")
             st.rerun()
         else:
-            st.error("Jawaban salah! Better luck next time.")
+            st.error("Better luck next time. Byee~~~")
+            time.sleep(1)
             st.session_state.current_stage = 0
             st.rerun()

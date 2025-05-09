@@ -3,7 +3,7 @@ import time  # Import time untuk penundaan
 
 # Fungsi untuk menampilkan halaman login
 def login_page():
-    #st.title("Login Page")
+    st.title("Login Page")
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
     
@@ -51,7 +51,7 @@ def final_page():
     st.title("Selamat! Kamu telah menyelesaikan Big Data Mini Game ini!")
     st.write("""
         Berikut tautan untuk tugas big data kalian:
-        [Klik disini](https://www.kaggle.com/account/login?returnUrl=%2Fcompetitions%2Fmachine-learning-challenge-digilearn-2025)
+        [Klik disini](https://www.kaggle.com/competitions/machine-learning-challenge-mbc123-digilearn-2025)
     """)
 
 # Cek status login

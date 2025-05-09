@@ -1,7 +1,11 @@
 import streamlit as st
+import time 
+from PIL import Image
 
 def stage4_page():
-    st.title("Chapter 4: Impostor Location")
+    #st.title("Chapter 4: Impostor Location")
+    image = Image.open("assets/4.png")
+    st.image(image, caption='', use_column_width=True)
 
     st.markdown("""
     Kamera tidak pernah berbohong, tetapi kadang mereka tidak menceritakan seluruh cerita
@@ -40,6 +44,7 @@ def stage4_page():
             st.success("Chapter 4 selesai!")
             st.rerun()
         else:
-            st.error("Jawaban salah! Better luck next time.")
+            st.error("Better luck next time. Byee~~~")
+            time.sleep(1)
             st.session_state.current_stage = 0
             st.rerun()

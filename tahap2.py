@@ -1,8 +1,11 @@
 import streamlit as st
+import time 
+from PIL import Image
 
 def stage2_page():
-    st.title("Chapter 2: Bayangan di Langit")
-
+    #st.title("Chapter 2: Bayangan di Langit")
+    image = Image.open("assets/2.png")
+    st.image(image, caption='', use_column_width=True)
 # p1
     st.markdown("""
     Seperti suara yang bergema di ruang hampa, jawaban datang dari jauh. Koordinat muncul di layar. Sesuatu, atau seseorang, telah merespons.
@@ -23,14 +26,18 @@ def stage2_page():
     st.markdown("[Koordinat pada layar](https://colab.research.google.com/drive/1jqppLKAaL-xjIvTQEtomf4dNNr66BNmb?usp=sharing)")
 
 
-    answer = st.number_input("Masukkan angka:", min_value=0, max_value=10000)
+    answerx = st.number_input("Masukkan Right Ascension:", min_value=-10000, max_value=10000)
+    answery = st.number_input("Masukkan Declination:", min_value=-10000, max_value=10000)
     
     if st.button("Kirim"):
-        if answer in range(209, 221):
+        if answerx in range(209, 221) and answery in range(-70, -50):
             st.session_state.current_stage = 3
             st.success("Chapter 2 selesai!")
             st.rerun()
         else:
-            st.error("Jawaban salah! Better luck next time.")
+            st.error("Better luck next time. Byee~~~")
+            time.sleep(1)
             st.session_state.current_stage = 0
             st.rerun()
+    
+    
