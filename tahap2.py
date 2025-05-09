@@ -5,7 +5,10 @@ from PIL import Image
 def stage2_page():
     #st.title("Chapter 2: Bayangan di Langit")
     image = Image.open("assets/2.png")
-    st.image(image, caption='', use_column_width=True)
+    try:
+        st.image(image, caption='', use_container_width=True)
+    except TypeError:
+        st.image(image, caption='', use_column_width=True)
 # p1
     st.markdown("""
     Seperti suara yang bergema di ruang hampa, jawaban datang dari jauh. Koordinat muncul di layar. Sesuatu, atau seseorang, telah merespons.
